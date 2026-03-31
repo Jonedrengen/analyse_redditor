@@ -1,0 +1,11 @@
+name: analyse_redditor
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - praw=7.8.1
+  - pandas=2.2.3
+  - matplotlib=3.9.4
+  - python-dotenv=1.0.1
+  - pytest=9.0.2
