@@ -14,7 +14,7 @@ top subreddits, and more.
 
 ## Prerequisites
 
-- Python 3.10+
+- [Conda](https://docs.conda.io/en/latest/) (Miniconda or Anaconda)
 - A Reddit application (free) to obtain API credentials:
   1. Go to <https://www.reddit.com/prefs/apps> and create a **script** app.
   2. Copy the **client ID** (shown under the app name) and the
@@ -27,8 +27,9 @@ top subreddits, and more.
 git clone https://github.com/Jonedrengen/analyse_redditor.git
 cd analyse_redditor
 
-# 2. Install dependencies
-pip install -r requirements.txt
+# 2. Create and activate the conda environment
+conda env create -f environment.yml
+conda activate analyse_redditor
 
 # 3. Configure credentials
 cp .env.example .env
@@ -84,7 +85,7 @@ python main.py spez --json
 ```
 analyse_redditor/
 ├── main.py            # CLI entry point
-├── requirements.txt
+├── environment.yml    # Conda environment specification
 ├── .env.example       # Credentials template
 ├── src/
 │   ├── scraper.py     # RedditorScraper — fetches data via PRAW
@@ -96,7 +97,7 @@ analyse_redditor/
 ## Running the tests
 
 ```bash
-pip install pytest
+conda activate analyse_redditor
 pytest tests/ -v
 ```
 
